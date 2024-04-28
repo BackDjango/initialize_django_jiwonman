@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'users.User'
 
 LOCAL_APPS = [
-    'users'
+    'users',
+    'api'
 ]
 
 THIRD_PARTH_APPS = [
@@ -133,8 +134,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework.renderers.JSONRenderer',
     ],
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser',

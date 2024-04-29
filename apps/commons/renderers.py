@@ -6,7 +6,7 @@ class CustomJSONRenderer(JSONRenderer):
             'code': renderer_context['response'].status_code,
             'author': 'jiwonman'
         }
-        if hasattr(data, 'error'):
+        if data.get('error'):
             response_data['error'] = data['error']
         else:
             response_data['message'] = data

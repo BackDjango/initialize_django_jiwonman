@@ -1,6 +1,6 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from users import views 
+from apps.users import views 
 
 urlpatterns = [
     path('signup/', views.SignUpAPIView.as_view(), name='signup'),

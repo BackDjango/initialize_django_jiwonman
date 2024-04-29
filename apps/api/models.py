@@ -3,6 +3,7 @@ from apps.users.models import User
 
 # Create your models here.
 
+
 class Board(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
@@ -12,5 +13,4 @@ class Board(models.Model):
     update_date = models.DateField(auto_now=True)
 
     class Meta:
-        db_table = 'board'
-    
+        db_table = "board"

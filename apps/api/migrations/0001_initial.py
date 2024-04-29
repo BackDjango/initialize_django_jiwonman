@@ -15,17 +15,23 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Board',
+            name="Board",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=50)),
-                ('contents', models.TextField()),
-                ('create_date', models.DateTimeField(auto_now_add=True)),
-                ('update_date', models.DateField(auto_now=True)),
-                ('writer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("title", models.CharField(max_length=50)),
+                ("contents", models.TextField()),
+                ("create_date", models.DateTimeField(auto_now_add=True)),
+                ("update_date", models.DateField(auto_now=True)),
+                (
+                    "writer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
             options={
-                'db_table': 'board',
+                "db_table": "board",
             },
         ),
     ]

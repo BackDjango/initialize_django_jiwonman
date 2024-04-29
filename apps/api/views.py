@@ -5,6 +5,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from .models import Board
 from .serializers import BoardSerializer
 
+
 class BoardViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Board.objects.all()

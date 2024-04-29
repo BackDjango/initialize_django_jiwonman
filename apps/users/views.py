@@ -8,6 +8,7 @@ from rest_framework import status
 
 AuthUser = get_user_model()
 
+
 class SignUpAPIView(APIView):
     def post(self, request: Request) -> Response:
         try:
@@ -20,6 +21,7 @@ class SignUpAPIView(APIView):
 
 class SingOutAPIView(APIView):
     permission_classes = [IsAuthenticated]
+
     def delete(self, request: Request) -> Response:
         request.user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
@@ -27,8 +29,8 @@ class SingOutAPIView(APIView):
 
 class LoginAPIView(APIView):
     def post(self, request: Request) -> Response:
-        username = request.data.get('username')
-        password = request.data.get('password')
+        username = request.data.get("username")
+        password = request.data.get("password")
 
         user = authenticate(request, username=username, password=password)
 
@@ -37,8 +39,10 @@ class LoginAPIView(APIView):
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
 class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated]
+
     def get(self, request: Request) -> Response:
         logout(request)
         return Response(status=status.HTTP_204_NO_CONTENT)

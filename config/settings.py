@@ -23,7 +23,7 @@ LOCAL_APPS = [
     "apps.commons.apps.CommonsConfig",
 ]
 
-THIRD_PARTH_APPS = ["rest_framework"]
+THIRD_PARTH_APPS = ["rest_framework", "drf_yasg"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",

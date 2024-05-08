@@ -1,7 +1,8 @@
 from django.db import models
-from users.models import User
+from apps.users.models import User
 
 # Create your models here.
+
 
 class Board(models.Model):
     id = models.AutoField(primary_key=True)
@@ -12,5 +13,4 @@ class Board(models.Model):
     update_date = models.DateField(auto_now=True)
 
     class Meta:
-        db_table = 'board'
-    
+        db_table = "board"
